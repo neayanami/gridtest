@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+a:hover {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #d8d8d8;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-item {
+  color: black;
+  font-family: Roboto Mono;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.header-href {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.main {
+  width: 100%;
+  background-color: #d8d8d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 150px;
+  box-sizing: border-box;
+}
+
+.box-h1 {
+  font-size: 76px;
+  line-height: 0.9;
+}
+
+.box-text {
+  font-size: 32px;
+  margin-top: 20px;
+  color: black;
+}
+
+.main-grid {
+  margin-top: 150px;
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 550px);
+  box-sizing: border-box;
+}
+
+.main-item-img {
+  width: 100%;
+  height: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
+.main-item-text {
+  font-size: 20px;
+  margin-top: 10px;
+  color: black;
+}
+
+html,
+body,
+h1,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: Roboto Mono;
+}

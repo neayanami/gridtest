@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: $grey-color;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-item {
+  color: $black-color;
+  font-family: Roboto Mono;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.header-href {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
