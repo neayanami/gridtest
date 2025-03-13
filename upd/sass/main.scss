@@ -1,0 +1,20 @@
+@import "_vars";
+@import "_header";
+@import "_main";
+
+html,
+body,
+h1,
+p,
+a,
+tr,
+td {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: Roboto Mono;
+}
+
+html {
+  background-color: $grey-color;
+}
