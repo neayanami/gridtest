@@ -1,0 +1,15 @@
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\bin\Debug\laba7.exe.config
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\bin\Debug\laba7.exe
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\bin\Debug\laba7.pdb
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7.csproj.AssemblyReference.cache
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\MainWindow.g.cs
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\App.g.cs
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7_MarkupCompile.cache
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7_MarkupCompile.lref
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\MainWindow.baml
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7.g.resources
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7.Properties.Resources.resources
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7.csproj.GenerateResource.cache
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7.csproj.CoreCompileInputs.cache
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7.exe
+C:\Users\pashi\OneDrive\Документы\WPF\laba7\laba7\obj\Debug\laba7.pdb

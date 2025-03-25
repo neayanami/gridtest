@@ -1,0 +1,28 @@
+﻿<Window x:Class="laba8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:laba8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Матрица 10×10, заполненная змейкой:" 
+                   FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="MatrixTextBlock" FontFamily="Courier New" 
+                       FontSize="14" TextWrapping="NoWrap"/>
+        </ScrollViewer>
+
+        <Button Grid.Row="2" x:Name="RegenerateButton" Content="Сгенерировать снова" 
+                Click="RegenerateButton_Click" HorizontalAlignment="Center" 
+                Margin="0,10,0,0" Padding="10,5" Width="150"/>
+    </Grid>
+</Window>
