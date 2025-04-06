@@ -1,0 +1,30 @@
+﻿<Window x:Class="laba12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:laba12"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Область отображения изображения -->
+        <Image x:Name="ImageDisplay" Grid.Row="0" Stretch="Uniform"/>
+
+        <!-- Панель управления -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="RedChannelButton" Content="Обнулить Red" Margin="5" Width="100" 
+                    Click="RedChannelButton_Click" IsEnabled="False"/>
+            <Button x:Name="GreenChannelButton" Content="Обнулить Green" Margin="5" Width="100" 
+                    Click="GreenChannelButton_Click" IsEnabled="False"/>
+            <Button x:Name="BlueChannelButton" Content="Обнулить Blue" Margin="5" Width="100" 
+                    Click="BlueChannelButton_Click" IsEnabled="False"/>
+            <Button x:Name="ResetButton" Content="Сброс" Margin="5" Width="100" 
+                    Click="ResetButton_Click" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Window>
