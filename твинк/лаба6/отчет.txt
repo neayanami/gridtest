@@ -1,0 +1,5336 @@
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Доставка                                                                                Страница: 1
+
+
+
+
+Свойства
+
+AlternateBackShade:        95                          AlternateBackThemeC        1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        0
+
+DatasheetGridlinesThe      3                           DateCreated:               05.03.2025 10:42:59
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {ED2D27D4-32D7-
+                                                                                  4F58-A8F2-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 13:18:59
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+RecordCount:               0                           ThemeFontIndex:            1
+TotalsRow:                 False                       Updatable:                 True
+
+
+
+Столбцы
+
+         Имя                                                     Тип                        Размер
+
+         КодДоставки                                             Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины; автоприращение
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  GUID:                      {guid {45128412-1E32-4C2D-A609-5D39AF7749BE}}
+                  OrdinalPosition:           0
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодДоставки
+
+                  SourceTable:               Доставка
+                  TextAlign:                 Общее
+
+
+         КодТранспортнойКомпании                                 Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DecimalPlaces:             Авто
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Доставка                                                                                Страница: 2
+
+
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {0B2B3611-3D22-4D07-8386-5A8B1AA61E10}}
+
+                  OrdinalPosition:           1
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               КодТранспортнойКомпании
+
+                  SourceTable:               Доставка
+                  TextAlign:                 Общее
+
+
+         ДатаДоставки                                            Дата/время                               8
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  GUID:                      {guid {4B59F575-DF68-4A71-A3C9-442D9FDDDC60}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           2
+
+                  Required:                  True
+                  ResultType:                0
+
+                  ShowDatePicker:            Для дат
+                  SourceField:               ДатаДоставки
+
+                  SourceTable:               Доставка
+                  TextAlign:                 Общее
+
+
+         Тариф                                                   Денежный                                 8
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              1049
+
+                  DataUpdatable:             False
+                  DecimalPlaces:             2
+                  Format:                    #,##0.00 ?;-#,##0.00 ?
+
+                  GUID:                      {guid {B1034C2A-0758-4BD7-8A82-1891119AA361}}
+                  OrdinalPosition:           3
+
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               Тариф
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Доставка                                                                                Страница: 3
+
+
+                  SourceTable:               Доставка
+                  TextAlign:                 Общее
+
+
+
+
+
+
+
+Схема данных
+
+
+
+        ДоставкаПодробности_Заказа
+
+                            Доставка                      Подробности_Заказа
+
+
+                    КодДоставки               1       n  КодДоставки
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+        Транспортная_КомпанияДоставка
+
+                        Транспортная_Комп                      Доставка
+
+                    КодТранспортнойКо         1       n  КодТранспортнойКо
+                                                         мпании
+
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+
+Индексы таблицы
+         Им                                       Число полей
+
+         PrimaryKey                               1
+
+                  Clustered:                 False
+                  DistinctCount:             0
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      PrimaryKey
+                  Primary:                   True
+
+                  Required:                  True
+                  Unique:                    True
+
+                   Поля:
+                   КодДоставки                о возрастанию
+
+
+
+
+
+
+         Транспортная_КомпанияДоставка            1
+                  Clustered:                 False
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Доставка                                                                                Страница: 4
+
+
+
+                  DistinctCount:             0
+
+                  Foreign:                   True
+                  IgnoreNulls:               False
+
+                  Name:                      Транспортная_КомпанияДоставка
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    False
+                   Поля:
+
+                   КодТранспортнойКомп        о возрастанию
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Заказы                                                                                  Страница: 5
+
+
+
+
+Свойства
+
+AlternateBackShade:        95                          AlternateBackThemeC        1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        0
+
+DatasheetGridlinesThe      3                           DateCreated:               05.03.2025 10:28:57
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {10026123-BA6A-
+                                                                                  468B-9123-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 13:36:06
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+RecordCount:               1                           ThemeFontIndex:            1
+TotalsRow:                 False                       Updatable:                 True
+
+
+
+Столбцы
+
+         Имя                                                     Тип                        Размер
+
+         КодЗаказа                                               Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины; автоприращение
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  GUID:                      {guid {1EEFF808-25A5-4A48-B244-C4F9D6219780}}
+                  OrdinalPosition:           0
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодЗаказа
+
+                  SourceTable:               Заказы
+                  TextAlign:                 Общее
+
+
+         КодКлиента                                              Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Заказы                                                                                  Страница: 6
+
+
+
+                  GUID:                      {guid {53935515-E98C-440B-A3E2-EB2329120BD2}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           1
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               КодКлиента
+                  SourceTable:               Заказы
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         КодСотрудника                                                                                    4
+                  AggregateType:             -1
+
+                  AllowMultipleValues:       True
+                  AllowValueListEdits:       False
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  BoundColumn:               1
+
+                  CollatingOrder:            4
+                  ColumnCount:               3
+                  ColumnHeads:               False
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  ColumnWidths:              0;1440;1440
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DecimalPlaces:             Авто
+                  DisplayControl:            Поле со списком
+                  GUID:                      {guid {615A7A8B-3667-498F-A95A-124CAA82AD54}}
+
+                  LimitToList:               True
+                  ListRows:                  16
+
+                  ListWidth:                 2880twip
+                  OrdinalPosition:           2
+
+                  Required:                  True
+                  ResultType:                0
+
+                  RowSource:                 SELECT [Сотрудники].[КодСотрудника],
+                                             [Сотрудники].[Фамилия], [Сотрудники].[Должность]
+                  RowSourceType:             Таблица или запрос
+
+                  ShowOnlyRowSourceV         False
+                  SourceField:               КодСотрудника
+                  SourceTable:               Заказы
+
+                  TextAlign:                 Общее
+
+
+
+         ДатаЗаказа                                              Дата/время                               8
+                  AggregateType:             -1
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Заказы                                                                                  Страница: 7
+
+
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  Format:                    Short Date
+
+                  GUID:                      {guid {E00E7759-869E-4242-A623-6669DBAD58F7}}
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           3
+                  Required:                  False
+
+                  ResultType:                0
+                  ShowDatePicker:            Для дат
+
+                  SourceField:               ДатаЗаказа
+                  SourceTable:               Заказы
+
+                  TextAlign:                 Общее
+
+         ТребуемаяДатаВыполнения                                 Дата/время                               8
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+                  GUID:                      {guid {A9722E8C-6CF0-467B-9015-3FA8A18ED73B}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           4
+                  Required:                  False
+
+                  ResultType:                0
+                  ShowDatePicker:            Для дат
+
+                  SourceField:               ТребуемаяДатаВыполнения
+                  SourceTable:               Заказы
+                  TextAlign:                 Общее
+
+
+         ОжидаемаяДатаВыполнения                                 Дата/время                               8
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Заказы                                                                                  Страница: 8
+
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  GUID:                      {guid {DD1E97BF-CBED-40E7-AD26-B8C7A861B125}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           5
+
+                  Required:                  False
+                  ResultType:                0
+
+                  ShowDatePicker:            Для дат
+                  SourceField:               ОжидаемаяДатаВыполнения
+                  SourceTable:               Заказы
+
+                  TextAlign:                 Общее
+
+
+         НомерСчетаКлиента                                       Текстовый                               15
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {67C2B046-2F93-4E11-93BC-58D75FA786F2}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           6
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               НомерСчетаКлиента
+                  SourceTable:               Заказы
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+
+
+
+
+
+Схема данных
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Заказы                                                                                  Страница: 9
+
+
+
+        ЗаказыПодробности_Заказа
+
+                             Заказы                       Подробности_Заказа
+
+
+                    КодЗаказа                 1       n  КодЗаказа
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+        КлиентыЗаказы
+
+                             Клиенты                            Заказы
+
+                    КодКлиента                1       n  КодКлиента
+
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+        СотрудникиЗаказы
+
+                           Сотрудники                           Заказы
+
+
+                    КодСотрудника                        КодСотрудника.Value
+
+
+                 Attributes:                 Необязательность
+
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+Индексы таблицы
+
+         Им                                       Число полей
+
+         PrimaryKey                               1
+
+                  Clustered:                 False
+                  DistinctCount:             1
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      PrimaryKey
+                  Primary:                   True
+
+                  Required:                  True
+                  Unique:                    True
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Заказы                                                                                 Страница: 10
+
+
+                   Поля:
+                   КодЗаказа                  о возрастанию
+
+
+
+
+
+
+         КлиентыЗаказы                            1
+                  Clustered:                 False
+
+                  DistinctCount:             1
+                  Foreign:                   True
+
+                  IgnoreNulls:               False
+                  Name:                      КлиентыЗаказы
+
+                  Primary:                   False
+                  Required:                  False
+
+                  Unique:                    False
+                   Поля:
+                   КодКлиента                 о возрастанию
+
+
+
+
+
+
+         КодКлиента                               1
+
+                  Clustered:                 False
+                  DistinctCount:             1
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      КодКлиента
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    False
+                   Поля:
+
+                   КодКлиента                 о возрастанию
+
+
+
+
+
+
+         НомерСчетаКлиента                        1
+                  Clustered:                 False
+
+                  DistinctCount:             1
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      НомерСчетаКлиента
+
+                  Primary:                   False
+                  Required:                  False
+                  Unique:                    False
+
+                   Поля:
+                   НомерСчетаКлиента          о возрастанию
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Заказы                                                                                 Страница: 11
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 12
+
+
+
+
+Свойства
+
+AlternateBackShade:        100                         AlternateBackThemeC        -1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        -1
+
+DatasheetGridlinesThe      -1                          DateCreated:               06.03.2025 14:06:33
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {69DD42CB-4866-
+                                                                                  4333-A877-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 13:36:06
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+RecordCount:               0                           ThemeFontIndex:            -1
+TotalsRow:                 False                       Updatable:                 True
+
+
+
+Столбцы
+
+         Имя                                                     Тип                        Размер
+
+         КодКлиента                                              Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {60498814-BB76-44E1-AB72-B02F09B379D2}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           0
+
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               КодКлиента
+                  SourceTable:               Клиенты
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        False
+
+
+         Имя                                                     Текстовый                               30
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 13
+
+
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {63BB2E71-AC0E-48B2-87F5-940CB1CC0108}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           1
+
+                  Required:                  True
+                  ResultType:                0
+                  SourceField:               Имя
+
+                  SourceTable:               Клиенты
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         Тип                                                     Текстовый                              255
+
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  Format:                    @
+
+                  GUID:                      {guid {C69165EB-2E6C-433F-B277-FAB18C778495}}
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           2
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Тип
+
+                  SourceTable:               Клиенты
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        False
+
+         Размер                                                  Двойное с                                8
+
+                  AggregateType:             -1
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 14
+
+
+                  DataUpdatable:             False
+                  DecimalPlaces:             Авто
+                  DisplayControl:            Поле
+
+                  Format:                    General Number
+                  GUID:                      {guid {1070BAEF-196E-46B6-BE23-18F2778578F9}}
+
+                  OrdinalPosition:           3
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Размер
+
+                  SourceTable:               Клиенты
+                  TextAlign:                 Общее
+
+
+         Фамилия                                                 Текстовый                               50
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {33972BED-B56F-43D8-9014-C989AFC5BDE8}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           4
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Фамилия
+                  SourceTable:               Клиенты
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Адрес                                                   Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {24D7EF3C-13D0-4744-9574-CC693A73A1DA}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 15
+
+
+                  OrdinalPosition:           5
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Адрес
+                  SourceTable:               Клиенты
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Другие свойства                                         Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               2190
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  Format:                    @
+                  GUID:                      {guid {2D705CCF-5439-4DB7-86AC-5B7C07E13E9A}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           6
+
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               Другие свойства
+                  SourceTable:               Клиенты
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        False
+
+
+         Город                                                   Текстовый                               50
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+                  GUID:                      {guid {3E586ACD-420F-4552-9181-044EAE017E89}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           7
+                  Required:                  True
+
+                  ResultType:                0
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 16
+
+
+                  SourceField:               Город
+                  SourceTable:               Клиенты
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+         Штат                                                    Текстовый                               20
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {7E99076A-371A-442F-B459-CB4BC74F2C28}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           8
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Штат
+                  SourceTable:               Клиенты
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         ПочтовыйИндекс                                          Текстовый                                7
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {F6C7077F-7D21-4549-B3AB-4D1E63EEB2E7}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  InputMask:                 9999999
+                  OrdinalPosition:           9
+
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               ПочтовыйИндекс
+                  SourceTable:               Клиенты
+
+                  TextAlign:                 Общее
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 17
+
+
+                  UnicodeCompression:        True
+
+         Страна                                                  Текстовый                               50
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {69F5F4AA-D4E4-4EDB-9436-DA9F4DA59893}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           10
+
+                  Required:                  True
+                  ResultType:                0
+                  SourceField:               Страна
+
+                  SourceTable:               Клиенты
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+         НомерТелефона                                           Текстовый                               15
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {37760815-F5A9-4F66-8238-09FBBA5D0884}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  InputMask:                 \(999") "999\-9999
+                  OrdinalPosition:           11
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               НомерТелефона
+
+                  SourceTable:               Клиенты
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         КредитнаяКарта                                          Целое                                    2
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 18
+
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DecimalPlaces:             Авто
+                  DefaultValue:              0
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {7917BCB0-5703-426C-85D5-DEFDD2C06325}}
+
+                  OrdinalPosition:           12
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КредитнаяКарта
+
+                  SourceTable:               Клиенты
+                  TextAlign:                 Общее
+
+
+         НомерКредитнойКарты                                     Текстовый                              255
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {9C03A6E4-E671-46C0-BD19-84C416DAD4DB}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           13
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               НомерКредитнойКарты
+                  SourceTable:               Клиенты
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+
+
+
+
+
+Схема данных
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 19
+
+
+
+        КлиентыЗаказы
+
+                             Клиенты                            Заказы
+
+
+                    КодКлиента                1       n  КодКлиента
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+        КлиентыФактический_Адрес_Доставки
+
+                             Клиенты                       Фактический_Адрес
+
+                    КодКлиента                1       n  КодКлиента
+
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+
+Индексы таблицы
+         Им                                       Число полей
+
+         PrimaryKey                               1
+
+                  Clustered:                 False
+                  DistinctCount:             0
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      PrimaryKey
+                  Primary:                   True
+
+                  Required:                  True
+                  Unique:                    True
+
+                   Поля:
+                   КодКлиента                 о возрастанию
+
+
+
+
+
+
+         НомерКредитнойКарты                      1
+                  Clustered:                 False
+
+                  DistinctCount:             0
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      НомерКредитнойКарты
+
+                  Primary:                   False
+                  Required:                  False
+
+                  Unique:                    False
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Клиенты                                                                                Страница: 20
+
+
+                   Поля:
+                   НомерКредитнойКарт         о возрастанию
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Лист1                                                                                  Страница: 21
+
+
+
+
+Свойства
+
+AlternateBackShade:        100                         AlternateBackThemeC        -1
+AlternateBackTint:         100                         Attributes:                Связанный объект
+BackShade:                 100                         BackTint:                  100
+
+Connect:                   Excel 12.0                  DatasheetForeThemeC        -1
+                           Xml;HDR=YES;IMEX=2;
+                           ACCDB=YES;DATABA
+                           SE=Z:\2.23-
+                           09.02Б\Мазурок\бд\лаб
+DatasheetGridlinesThe      -1                          DateCreated:               11.03.2025 12:58:43
+
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {0DBF30E7-89D4-
+                                                                                  4575-9FA4-
+HideNewField:              False                       LastUpdated:               11.03.2025 13:20:20
+
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+
+RecordCount:               -1                          SourceTableName:           Лист1$
+ThemeFontIndex:            -1                          TotalsRow:                 False
+Updatable:                 False
+
+
+
+Столбцы
+         Имя                                                     Тип                        Размер
+
+
+         Имя поля                                                Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               1
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  Format:                    @
+                  GUID:                      {guid {DD7EC13E-7EDE-4808-87B9-1707020952D2}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           0
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Имя поля
+                  SourceTable:               Лист1$
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        False
+
+
+         Тип                                                     Текстовый                              255
+
+                  AggregateType:             -1
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Лист1                                                                                  Страница: 22
+
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  Format:                    @
+                  GUID:                      {guid {E08ACA83-0AEA-458D-B346-47BC440A5EFC}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           1
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Тип
+
+                  SourceTable:               Лист1$
+                  TextAlign:                 Общее
+                  UnicodeCompression:        False
+
+
+         Размер                                                  Двойное с                                8
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DecimalPlaces:             Авто
+
+                  DisplayControl:            Поле
+                  Format:                    General Number
+
+                  GUID:                      {guid {FFE80933-79FB-432F-8D3E-CD13962EEB42}}
+                  OrdinalPosition:           2
+
+                  Required:                  False
+                  ResultType:                0
+                  SourceField:               Размер
+
+                  SourceTable:               Лист1$
+                  TextAlign:                 Общее
+
+
+         Другие свойства                                         Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Лист1                                                                                  Страница: 23
+
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               4725
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  Format:                    @
+
+                  GUID:                      {guid {050B580A-3816-4849-9BD6-32DEABBF2F09}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           3
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Другие свойства
+
+                  SourceTable:               Лист1$
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        False
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Ошибки сохранения при автозамене имен                                                  Страница: 24
+
+
+
+
+Свойства
+
+AlternateBackShade:        100                         AlternateBackThemeC        -1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        -1
+
+DatasheetGridlinesThe      -1                          DateCreated:               06.03.2025 14:02:30
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {58084914-12FE-
+                                                                                  4B60-A39F-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 13:38:48
+LogTable:                  1                           NameMap:                   Двоичные данные
+OrderByOn:                 False                       OrderByOnLoad:             True
+
+Orientation:               Слева направо               PublishToWeb:              1
+ReadOnlyWhenDiscon         False                       RecordCount:               1
+ThemeFontIndex:            -1                          TotalsRow:                 False
+
+Updatable:                 True
+
+
+
+Столбцы
+         Имя                                                     Тип                        Размер
+
+
+         КодКатегории                                            Текстовый                              255
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {298F9D92-D4F4-40DE-A86E-AACEAE8232F9}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           0
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодКатегории
+                  SourceTable:               Ошибки сохранения при автозамене имен
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        False
+
+
+         НАзваниеКатегории                                       Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Ошибки сохранения при автозамене имен                                                  Страница: 25
+
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {C99E8D46-CE7B-4835-B803-E9B6A9134958}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           1
+
+                  Required:                  False
+                  ResultType:                0
+                  SourceField:               НАзваниеКатегории
+
+                  SourceTable:               Ошибки сохранения при автозамене имен
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        False
+
+
+         Описание                                                Текстовый                              255
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               1905
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {8331B94C-7DE5-404E-A256-A8B16B3635EA}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           2
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               Описание
+                  SourceTable:               Ошибки сохранения при автозамене имен
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        False
+
+
+
+
+
+
+
+Схема данных
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Ошибки сохранения при автозамене имен                                                  Страница: 26
+
+
+
+        Ошибки сохранения при автозамене именТовары
+
+                       Ошибки сохранения                        Товары
+
+
+                    КодКатегории              1       n  КодКатегории
+
+
+                 Attributes:                 Обязательность
+
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+Индексы таблицы
+
+         Им                                       Число полей
+
+         PrimaryKey                               1
+                  Clustered:                 False
+
+                  DistinctCount:             1
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      PrimaryKey
+
+                  Primary:                   True
+                  Required:                  True
+
+                  Unique:                    True
+                   Поля:
+
+                   КодКатегории               о возрастанию
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Подробности_Заказа                                                                     Страница: 27
+
+
+
+
+Свойства
+
+AlternateBackShade:        95                          AlternateBackThemeC        1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        0
+
+DatasheetGridlinesThe      3                           DateCreated:               05.03.2025 11:24:52
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {EF55FD4A-B59C-
+                                                                                  4E4F-8E99-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 13:40:48
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+RecordCount:               0                           ThemeFontIndex:            1
+TotalsRow:                 False                       Updatable:                 True
+
+
+
+Столбцы
+
+         Имя                                                     Тип                        Размер
+
+         КодЗаказа                                               Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DecimalPlaces:             Авто
+                  DisplayControl:            Поле
+                  GUID:                      {guid {1AE6BC04-5568-4AB8-8C28-CB9ACFECA488}}
+
+                  OrdinalPosition:           0
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               КодЗаказа
+
+                  SourceTable:               Подробности_Заказа
+                  TextAlign:                 Общее
+
+
+         КодТовара                                               Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Подробности_Заказа                                                                     Страница: 28
+
+
+
+                  DataUpdatable:             False
+                  DecimalPlaces:             Авто
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {BAE917CA-2162-4CC7-BD53-C63C595DD80F}}
+
+                  OrdinalPosition:           1
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               КодТовара
+
+                  SourceTable:               Подробности_Заказа
+                  TextAlign:                 Общее
+
+
+         Количество                                              Длинное целое                            4
+                  AggregateType:             -1
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DecimalPlaces:             Авто
+                  DefaultValue:              0
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {63D2E57A-A9D8-4AC4-94E7-5C0CCDE9ED0C}}
+
+                  OrdinalPosition:           2
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Количество
+                  SourceTable:               Подробности_Заказа
+
+                  TextAlign:                 Общее
+
+
+         Скидка                                                  Двойное с                                8
+                  AggregateType:             -1
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DecimalPlaces:             0
+                  DefaultValue:              0
+
+                  DisplayControl:            Поле
+                  Format:                    Percent
+
+                  GUID:                      {guid {40ED54F2-CC2D-43D0-ACA2-A9A18A4E80CD}}
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Подробности_Заказа                                                                     Страница: 29
+
+
+                  OrdinalPosition:           3
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               Скидка
+                  SourceTable:               Подробности_Заказа
+
+                  TextAlign:                 Общее
+
+
+         КодФактическогоАдреса                                   Длинное целое                            4
+                  AggregateType:             -1
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DecimalPlaces:             Авто
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {F509650D-161D-4414-BA22-19E0ED2E06F4}}
+                  OrdinalPosition:           4
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодФактическогоАдреса
+
+                  SourceTable:               Подробности_Заказа
+                  TextAlign:                 Общее
+
+
+         КодДоставки                                             Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DecimalPlaces:             Авто
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {534DE5DE-D7D0-4957-80B2-361F95EB5670}}
+
+                  OrdinalPosition:           5
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               КодДоставки
+                  SourceTable:               Подробности_Заказа
+
+                  TextAlign:                 Общее
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Подробности_Заказа                                                                     Страница: 30
+
+
+
+
+
+
+
+
+Схема данных
+
+
+
+        ДоставкаПодробности_Заказа
+
+                            Доставка                      Подробности_Заказа
+
+
+                    КодДоставки               1       n  КодДоставки
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+        ЗаказыПодробности_Заказа
+
+                             Заказы                       Подробности_Заказа
+
+                    КодЗаказа                 1       n  КодЗаказа
+
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+        ТоварыПодробности_Заказа
+
+                             Товары                       Подробности_Заказа
+
+
+                    КодТовара                 1       n  КодТовара
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+        Фактический_Адрес_ДоставкиПодробности_Заказа
+
+                        Фактический_Адрес                 Подробности_Заказа
+
+                    КодФактАдреса             1       n  КодФактическогоАд
+
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+Индексы таблицы
+         Им                                       Число полей
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Подробности_Заказа                                                                     Страница: 31
+
+
+
+
+         я
+
+         PrimaryKey                               2
+                  Clustered:                 False
+
+                  DistinctCount:             0
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      PrimaryKey
+
+                  Primary:                   True
+                  Required:                  True
+
+                  Unique:                    True
+                   Поля:
+
+                   КодЗаказа                  о возрастанию
+                   КодТовара                  о возрастанию
+
+
+
+
+
+
+         ДоставкаПодробности_Заказа               1
+                  Clustered:                 False
+
+                  DistinctCount:             0
+                  Foreign:                   True
+
+                  IgnoreNulls:               False
+                  Name:                      ДоставкаПодробности_Заказа
+
+                  Primary:                   False
+                  Required:                  False
+
+                  Unique:                    False
+                   Поля:
+                   КодДоставки                о возрастанию
+
+
+
+
+
+
+         ЗаказыПодробности_Заказа                 1
+
+                  Clustered:                 False
+                  DistinctCount:             0
+
+                  Foreign:                   True
+                  IgnoreNulls:               False
+
+                  Name:                      ЗаказыПодробности_Заказа
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    False
+
+                   Поля:
+                   КодЗаказа                  о возрастанию
+
+
+
+
+
+
+         КодЗаказа                                1
+                  Clustered:                 False
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Подробности_Заказа                                                                     Страница: 32
+
+
+
+                  DistinctCount:             0
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      КодЗаказа
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    False
+                   Поля:
+
+                   КодЗаказа                  о возрастанию
+
+
+
+
+
+         КодТовара                                1
+
+                  Clustered:                 False
+                  DistinctCount:             0
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      КодТовара
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    False
+
+                   Поля:
+                   КодТовара                  о возрастанию
+
+
+
+
+
+
+         ТоварыПодробности_Заказа                 1
+                  Clustered:                 False
+
+                  DistinctCount:             0
+                  Foreign:                   True
+
+                  IgnoreNulls:               False
+                  Name:                      ТоварыПодробности_Заказа
+
+                  Primary:                   False
+                  Required:                  False
+
+                  Unique:                    False
+                   Поля:
+
+                   КодТовара                  о возрастанию
+
+
+
+
+
+         Фактический_Адрес_ДоставкиП              1
+
+                  Clustered:                 False
+                  DistinctCount:             0
+
+                  Foreign:                   True
+                  IgnoreNulls:               False
+
+                  Name:                      Фактический_Адрес_ДоставкиПодробности_Заказа
+                  Primary:                   False
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Подробности_Заказа                                                                     Страница: 33
+
+
+
+                  Required:                  False
+
+                  Unique:                    False
+                   Поля:
+                   КодФактическогоАдре        о возрастанию
+
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+Разрешения групп
+
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Поставщики                                                                             Страница: 34
+
+
+
+
+Свойства
+
+AlternateBackShade:        95                          AlternateBackThemeC        1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        0
+
+DatasheetGridlinesThe      3                           DateCreated:               05.03.2025 10:53:50
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {498C686E-A817-
+                                                                                  4D6D-847C-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 13:39:36
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+RecordCount:               0                           ThemeFontIndex:            1
+TotalsRow:                 False                       Updatable:                 True
+
+
+
+Столбцы
+
+         Имя                                                     Тип                        Размер
+
+         КодПоставщика                                           Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {B3A15DD2-483B-4031-BB24-DAB8FB34F2A7}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           0
+
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               КодПоставщика
+                  SourceTable:               Поставщики
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        False
+
+
+         Организация                                             Текстовый                              255
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Поставщики                                                                             Страница: 35
+
+
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {64555341-91EA-4790-9E95-64A919CB2A31}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           1
+
+                  Required:                  True
+                  ResultType:                0
+                  SourceField:               Организация
+
+                  SourceTable:               Поставщики
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         Фамилия                                                 Текстовый                               20
+
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {88D58B90-4085-42EE-B1A3-99258D15110A}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+                  OrdinalPosition:           2
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Фамилия
+                  SourceTable:               Поставщики
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Имя                                                     Текстовый                               20
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Поставщики                                                                             Страница: 36
+
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {811477C7-E1BF-4F09-80F3-AA89ADFCA973}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           3
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Имя
+                  SourceTable:               Поставщики
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Должность                                               Текстовый                               50
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {0AEBE221-0A2D-4DBA-BA89-192753DBBC4E}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           4
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Должность
+                  SourceTable:               Поставщики
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         РабочийТелефон                                          Текстовый                               14
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {9217C48E-50A2-46E6-B8CB-B7B5916028CC}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Поставщики                                                                             Страница: 37
+
+
+                  InputMask:                 \(999") "000\-0000
+                  OrdinalPosition:           5
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               РабочийТелефон
+
+                  SourceTable:               Поставщики
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         МобильныйТелефон                                        Текстовый                               14
+
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {B88CA508-020F-4B05-9E44-97896092BA45}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  InputMask:                 \(999") "000\-0000
+
+                  OrdinalPosition:           6
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               МобильныйТелефон
+
+                  SourceTable:               Поставщики
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Факс                                                    Текстовый                               14
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {EDFE2910-15A5-4F43-91D5-656E676E4537}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  InputMask:                 000\-0000
+
+                  OrdinalPosition:           7
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Поставщики                                                                             Страница: 38
+
+
+                  Required:                  False
+                  ResultType:                0
+                  SourceField:               Факс
+
+                  SourceTable:               Поставщики
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+         Адрес                                                   Текстовый                              100
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {CE329BD1-A64D-4AD6-A243-050BC059CFB9}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+                  OrdinalPosition:           8
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Адрес
+                  SourceTable:               Поставщики
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Город                                                   Текстовый                               20
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {9299D640-A1F5-4040-8EFD-D5985C8C636B}}
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           9
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Город
+
+                  SourceTable:               Поставщики
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Поставщики                                                                             Страница: 39
+
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Штат                                                    Текстовый                               20
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {5DFCBC0D-C011-416E-BFD5-2C83E61EFD9C}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           10
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Штат
+                  SourceTable:               Поставщики
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Индекс                                                  Текстовый                                7
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {75FFA411-A2E2-4D72-A382-249BEC87D4BA}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  InputMask:                 9999999
+
+                  OrdinalPosition:           11
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               Индекс
+                  SourceTable:               Поставщики
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Поставщики                                                                             Страница: 40
+
+
+
+
+
+
+
+
+Схема данных
+
+
+
+        ПоставщикиТовары
+
+                           Поставщики                           Товары
+
+
+                    КодПоставщика             1       n  КодПоставщика
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+Индексы таблицы
+
+         Им                                       Число полей
+
+         PrimaryKey                               1
+                  Clustered:                 False
+
+                  DistinctCount:             0
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      PrimaryKey
+
+                  Primary:                   True
+                  Required:                  True
+
+                  Unique:                    True
+                   Поля:
+
+                   КодПоставщика              о возрастанию
+
+
+
+
+
+         КодПоставщика                            1
+
+                  Clustered:                 False
+                  DistinctCount:             0
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      КодПоставщика
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    False
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Поставщики                                                                             Страница: 41
+
+
+                   Поля:
+                   КодПоставщика              о возрастанию
+
+
+
+
+
+
+         Организация                              1
+                  Clustered:                 False
+
+                  DistinctCount:             0
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      Организация
+
+                  Primary:                   False
+                  Required:                  False
+
+                  Unique:                    False
+                   Поля:
+                   Организация                о возрастанию
+
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Сотрудники                                                                             Страница: 42
+
+
+
+
+Свойства
+
+AlternateBackShade:        95                          AlternateBackThemeC        1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        0
+
+DatasheetGridlinesThe      3                           DateCreated:               05.03.2025 11:10:08
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {5FE5849B-3A8C-
+                                                                                  412A-96E4-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 13:33:52
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+RecordCount:               1                           ThemeFontIndex:            1
+TotalsRow:                 False                       Updatable:                 True
+
+
+
+Столбцы
+
+         Имя                                                     Тип                        Размер
+
+         КодСотрудника                                           Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины; автоприращение
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               1
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  GUID:                      {guid {D5EFC055-5096-4F62-A0C3-631BFF748EF9}}
+                  OrdinalPosition:           0
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодСотрудника
+
+                  SourceTable:               Сотрудники
+                  TextAlign:                 Общее
+
+
+         Имя                                                     Текстовый                               20
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Сотрудники                                                                             Страница: 43
+
+
+
+                  GUID:                      {guid {9E0AF4DC-E268-4A14-807D-2622F406F798}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           1
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Имя
+                  SourceTable:               Сотрудники
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Фамилия                                                 Текстовый                               20
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {3A8E19AE-794D-43D8-8F1E-3171C3482915}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           2
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Фамилия
+                  SourceTable:               Сотрудники
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Должность                                               Текстовый                               50
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {2FFB38D1-A2CA-46E3-B174-8DDC2C63BC90}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Сотрудники                                                                             Страница: 44
+
+
+                  OrdinalPosition:           3
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Должность
+                  SourceTable:               Сотрудники
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Адрес                                                   Текстовый                              100
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {C33D7A67-A7F2-4AC6-9631-1255B4EE500D}}
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           4
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Адрес
+
+                  SourceTable:               Сотрудники
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         Город                                                   Текстовый                               20
+
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {A0131242-C378-4651-BD8D-E858EF60CD09}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           5
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Город
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Сотрудники                                                                             Страница: 45
+
+
+                  SourceTable:               Сотрудники
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Штат                                                    Текстовый                               20
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {CF0181C6-ED7B-4BFA-967E-EE0BF396CD64}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           6
+
+                  Required:                  True
+                  ResultType:                0
+                  SourceField:               Штат
+
+                  SourceTable:               Сотрудники
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+         Индекс                                                  Текстовый                                7
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {1B65E95F-D998-4627-95F7-F9443DACE8BE}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  InputMask:                 9999999
+                  OrdinalPosition:           7
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Индекс
+
+                  SourceTable:               Сотрудники
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Сотрудники                                                                             Страница: 46
+
+
+         Телефон                                                 Текстовый                               14
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {D6F36278-F5C4-4CCE-9684-1AD7EC4AF20C}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  InputMask:                 \(999") "000\-0000
+                  OrdinalPosition:           8
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Телефон
+
+                  SourceTable:               Сотрудники
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         ДатаРождения                                            Дата/время                               8
+
+                  AggregateType:             -1
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  Format:                    Short Date
+                  GUID:                      {guid {41501CF2-F24A-4E40-8C1F-23E05BDE0789}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           9
+
+                  Required:                  True
+                  ResultType:                0
+
+                  ShowDatePicker:            Для дат
+                  SourceField:               ДатаРождения
+
+                  SourceTable:               Сотрудники
+                  TextAlign:                 Общее
+
+
+         ДатаНайма                                               Дата/время                               8
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Сотрудники                                                                             Страница: 47
+
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  GUID:                      {guid {064CA0AB-163C-4D5B-AF1C-93A9C9373F6A}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+                  OrdinalPosition:           10
+
+                  Required:                  False
+                  ResultType:                0
+
+                  ShowDatePicker:            Для дат
+                  SourceField:               ДатаНайма
+
+                  SourceTable:               Сотрудники
+                  TextAlign:                 Общее
+
+                  ValidationRule:            <=Now()
+                  ValidationText:            «Дата должна быть не позднее текущей».
+
+
+         Заметки                                                 Поле МЕМО                                -
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  GUID:                      {guid {4DBA6F46-2B38-404F-817B-2275E168CCA3}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           11
+
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               Заметки
+                  SourceTable:               Сотрудники
+
+                  TextAlign:                 Общее
+                  TextFormat:                Обычный текст
+                  UnicodeCompression:        True
+
+
+         Приложения                                              Данные вложения                          4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины
+
+                  CollatingOrder:            2
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Сотрудники                                                                             Страница: 48
+
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            126
+                  GUID:                      {guid {B7E4AD2C-9B39-495E-88EA-059D58B56242}}
+
+                  OrdinalPosition:           12
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Приложения
+                  SourceTable:               Сотрудники
+
+
+
+
+
+
+
+Схема данных
+
+
+
+        СотрудникиЗаказы
+
+
+                           Сотрудники                           Заказы
+
+                    КодСотрудника                        КодСотрудника.Value
+
+
+
+                 Attributes:                 Необязательность
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+
+Индексы таблицы
+         Им                                       Число полей
+
+         PrimaryKey                               1
+
+                  Clustered:                 False
+                  DistinctCount:             1
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      PrimaryKey
+                  Primary:                   True
+
+                  Required:                  True
+                  Unique:                    True
+
+                   Поля:
+                   КодСотрудника              о возрастанию
+
+
+
+
+
+
+         Должность                                1
+                  Clustered:                 False
+
+                  DistinctCount:             1
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Сотрудники                                                                             Страница: 49
+
+
+
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      Должность
+
+                  Primary:                   False
+                  Required:                  False
+
+                  Unique:                    False
+                   Поля:
+                   Должность                  о возрастанию
+
+
+
+
+
+
+         Фамилия                                  1
+                  Clustered:                 False
+
+                  DistinctCount:             1
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      Фамилия
+
+                  Primary:                   False
+                  Required:                  False
+
+                  Unique:                    False
+                   Поля:
+
+                   Фамилия                    о возрастанию
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Товары                                                                                 Страница: 50
+
+
+
+
+Свойства
+
+AlternateBackShade:        95                          AlternateBackThemeC        1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        0
+
+DatasheetGridlinesThe      3                           DateCreated:               06.03.2025 14:03:36
+DefaultView:               2                           DisplayViewsOnShare        1
+FCMinDesignVer:            14.0.0000.0000              FCMinReadVer:              14.0.0000.0000
+
+FCMinWriteVer:             14.0.0000.0000              FilterOnLoad:              False
+GUID:                      {guid {1486E009-DECF-       HideNewField:              False
+                           40C9-8AC4-
+LastUpdated:               11.03.2025 13:40:48         NameMap:                   Двоичные данные
+
+OrderByOn:                 False                       OrderByOnLoad:             True
+Orientation:               Слева направо               PublishToWeb:              1
+ReadOnlyWhenDiscon         False                       RecordCount:               5
+
+ThemeFontIndex:            1                           TotalsRow:                 False
+Updatable:                 True
+
+
+
+Столбцы
+         Имя                                                     Тип                        Размер
+
+
+         КодТовара                                               Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины; автоприращение
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  GUID:                      {guid {BDC09123-08B0-4903-B08A-7EFD57854041}}
+
+                  OrdinalPosition:           0
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодТовара
+                  SourceTable:               Товары
+
+                  TextAlign:                 Общее
+
+
+         НаименованиеТовара                                      Текстовый                              255
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Товары                                                                                 Страница: 51
+
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+                  GUID:                      {guid {09DC3FF8-7026-4A8D-AA26-7DD29E22F098}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           1
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               НаименованиеТовара
+
+                  SourceTable:               Товары
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         ЛатинскоеНазвание                                       Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               2490
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {CBA1BD0F-8330-4CF4-A12B-92188536AF1A}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           2
+
+                  Required:                  False
+                  ResultType:                0
+                  SourceField:               ЛатинскоеНазвание
+
+                  SourceTable:               Товары
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+         КодПоставщика                                           Текстовый                              255
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {F1510642-F10F-4265-8171-1CA7201B3754}}
+
+                  IMEMode:                   0
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Товары                                                                                 Страница: 52
+
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           3
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодПоставщика
+
+                  SourceTable:               Товары
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         КодКатегории                                            Текстовый                              255
+
+                  AggregateType:             -1
+
+                  AllowMultipleValues:       False
+                  AllowValueListEdits:       False
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  BoundColumn:               1
+                  CollatingOrder:            Общий
+
+                  ColumnCount:               1
+                  ColumnHeads:               False
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  ColumnWidths:              1440
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле со списком
+
+                  GUID:                      {guid {B2CF4CEE-3982-404A-8B0B-C08E1D43DDD9}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  LimitToList:               False
+                  ListRows:                  16
+
+                  ListWidth:                 1440twip
+                  OrdinalPosition:           4
+
+                  Required:                  False
+                  ResultType:                0
+
+                  RowSource:                 SELECT [Ошибки сохранения при автозамене
+                                             имен].[КодКатегории] FROM [Ошибки сохранения при
+                  RowSourceType:             Таблица или запрос
+
+                  ShowOnlyRowSourceV         False
+                  SourceField:               КодКатегории
+
+                  SourceTable:               Товары
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+
+         Кол-воВУпаковке                                         Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Товары                                                                                 Страница: 53
+
+
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {92746C0E-4FD7-4D3B-B88A-830A7A613610}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+                  OrdinalPosition:           5
+
+                  Required:                  False
+                  ResultType:                0
+
+                  SourceField:               Кол-воВУпаковке
+                  SourceTable:               Товары
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         ЦенаЗаУпаковку                                          Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+                  GUID:                      {guid {AA4E5C85-A9E3-4238-8224-ECA019D5D621}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           6
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               ЦенаЗаУпаковку
+
+                  SourceTable:               Товары
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Кол-воНаСкладе                                          Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Товары                                                                                 Страница: 54
+
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {4F4DD5F9-382D-42E8-8735-626928FEC97B}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           7
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Кол-воНаСкладе
+                  SourceTable:               Товары
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         ТоваровНаСумму                                          Текстовый                              243
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  Expression:                [ЦенаЗаУпаковку]+[Кол-воНаСкладе]
+                  GUID:                      {guid {22D34553-000F-4F3B-875B-5E22E31E2E7E}}
+
+                  OrdinalPosition:           8
+                  Required:                  False
+                  ResultType:                10
+
+                  SourceField:               ТоваровНаСумму
+                  SourceTable:               Товары
+
+                  TextAlign:                 Общее
+
+
+         Изображение                                             Данные вложения                          4
+                  AggregateType:             -1
+
+                  AllowZeroLength:           False
+                  AppendOnly:                False
+
+                  Attributes:                фиксированной ширины
+                  CollatingOrder:            3
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            126
+                  GUID:                      {guid {4CF2C701-32BC-4445-8B15-6609C10367EA}}
+
+                  OrdinalPosition:           9
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Товары                                                                                 Страница: 55
+
+
+                  Required:                  False
+                  ResultType:                0
+                  SourceField:               Изображение
+
+                  SourceTable:               Товары
+
+
+
+
+
+
+
+Схема данных
+
+
+
+        Ошибки сохранения при автозамене именТовары
+
+                       Ошибки сохранения                        Товары
+
+                    КодКатегории              1       n  КодКатегории
+
+
+
+                 Attributes:                 Обязательность
+
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+        ПоставщикиТовары
+
+                           Поставщики                           Товары
+
+                    КодПоставщика             1       n  КодПоставщика
+
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+        ТоварыПодробности_Заказа
+
+                             Товары                       Подробности_Заказа
+
+
+                    КодТовара                 1       n  КодТовара
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+Индексы таблицы
+
+         Им                                       Число полей
+
+         PrimaryKey                               1
+                  Clustered:                 False
+
+                  DistinctCount:             5
+                  Foreign:                   False
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Товары                                                                                 Страница: 56
+
+
+
+                  IgnoreNulls:               False
+
+                  Name:                      PrimaryKey
+                  Primary:                   True
+
+                  Required:                  True
+                  Unique:                    True
+                   Поля:
+
+                   КодТовара                  о возрастанию
+
+
+
+
+
+         Ошибки сохранения при                    1
+
+                  Clustered:                 False
+                  DistinctCount:             1
+
+                  Foreign:                   True
+                  IgnoreNulls:               False
+
+                  Name:                      Ошибки сохранения при автозамене именТовары
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    False
+
+                   Поля:
+                   КодКатегории               о возрастанию
+
+
+
+
+
+
+         ПоставщикиТовары                         1
+                  Clustered:                 False
+
+                  DistinctCount:             1
+                  Foreign:                   True
+
+                  IgnoreNulls:               False
+                  Name:                      ПоставщикиТовары
+
+                  Primary:                   False
+                  Required:                  False
+
+                  Unique:                    False
+                   Поля:
+
+                   КодПоставщика              о возрастанию
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Товары                                                                                 Страница: 57
+
+
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Транспортная_Компания                                                                  Страница: 58
+
+
+
+
+Свойства
+
+AlternateBackShade:        95                          AlternateBackThemeC        1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        0
+
+DatasheetGridlinesThe      3                           DateCreated:               05.03.2025 11:20:45
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {2CE6E1AB-83E9-
+                                                                                  41B6-91AA-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 12:49:05
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+RecordCount:               0                           ThemeFontIndex:            1
+TotalsRow:                 False                       Updatable:                 True
+
+
+
+Столбцы
+
+         Имя                                                     Тип                        Размер
+
+         КодТранспортнойКомпании                                 Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины; автоприращение
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  GUID:                      {guid {C9ECDB6A-9017-42E3-9070-E81CFBEFB9F9}}
+                  OrdinalPosition:           0
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодТранспортнойКомпании
+
+                  SourceTable:               Транспортная_Компания
+                  TextAlign:                 Общее
+
+
+         НазваниеКомпании                                        Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Транспортная_Компания                                                                  Страница: 59
+
+
+
+                  GUID:                      {guid {DA4A7593-0E64-486E-B873-7641378141BC}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           1
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               НазваниеКомпании
+                  SourceTable:               Транспортная_Компания
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Фамилия                                                 Текстовый                               20
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {DA399F07-06A8-42F8-811F-5B963862607E}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           2
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Фамилия
+                  SourceTable:               Транспортная_Компания
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Имя                                                     Текстовый                               20
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {56F5D9F1-E8D8-4001-B091-85BEAB95A9E0}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Транспортная_Компания                                                                  Страница: 60
+
+
+                  OrdinalPosition:           3
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Имя
+                  SourceTable:               Транспортная_Компания
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Улица                                                   Текстовый                               50
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {7AE9E920-73BC-4A7E-8216-EBE297D53892}}
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           4
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Улица
+
+                  SourceTable:               Транспортная_Компания
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         Город                                                   Текстовый                               20
+
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {FC227CCD-914E-4191-AEED-24785D4C2939}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           5
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Город
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Транспортная_Компания                                                                  Страница: 61
+
+
+                  SourceTable:               Транспортная_Компания
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Штат                                                    Текстовый                               20
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {460FFFE0-9B5C-480D-A00E-672B40702BC9}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           6
+
+                  Required:                  True
+                  ResultType:                0
+                  SourceField:               Штат
+
+                  SourceTable:               Транспортная_Компания
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+         Индекс                                                  Текстовый                                7
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {9DF039DE-F32A-4BE1-B6A2-A8913DC75A81}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  InputMask:                 9999999
+                  OrdinalPosition:           7
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Индекс
+
+                  SourceTable:               Транспортная_Компания
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Транспортная_Компания                                                                  Страница: 62
+
+
+         Телефон                                                 Текстовый                               14
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {00C6F2C1-D8A9-4F50-A616-6858F65C01C3}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  InputMask:                 \(999\)000\-0000
+                  OrdinalPosition:           8
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Телефон
+
+                  SourceTable:               Транспортная_Компания
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+
+
+
+
+Схема данных
+
+
+
+
+        Транспортная_КомпанияДоставка
+
+                        Транспортная_Комп                      Доставка
+
+                    КодТранспортнойКо         1       n  КодТранспортнойКо
+                                                         мпании
+
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+
+Индексы таблицы
+         Им                                       Число полей
+
+
+         PrimaryKey                               1
+                  Clustered:                 False
+
+                  DistinctCount:             0
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      PrimaryKey
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Транспортная_Компания                                                                  Страница: 63
+
+
+
+                  Primary:                   True
+
+                  Required:                  True
+                  Unique:                    True
+                   Поля:
+
+                   КодТранспортнойКомп        о возрастанию
+
+
+
+
+
+         НазваниеКомпании                         1
+
+                  Clustered:                 False
+                  DistinctCount:             0
+
+                  Foreign:                   False
+                  IgnoreNulls:               False
+
+                  Name:                      НазваниеКомпании
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    True
+
+                   Поля:
+                   НазваниеКомпании           о возрастанию
+
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Фактический_Адрес_Доставки                                                             Страница: 64
+
+
+
+
+Свойства
+
+AlternateBackShade:        95                          AlternateBackThemeC        1
+AlternateBackTint:         100                         BackShade:                 100
+BackTint:                  100                         DatasheetForeThemeC        0
+
+DatasheetGridlinesThe      3                           DateCreated:               05.03.2025 10:48:05
+DefaultView:               2                           DisplayViewsOnShare        1
+FilterOnLoad:              False                       GUID:                      {guid {B709E115-E99F-
+                                                                                  4425-9BEF-
+
+HideNewField:              False                       LastUpdated:               11.03.2025 13:24:04
+NameMap:                   Двоичные данные             OrderByOn:                 False
+OrderByOnLoad:             True                        Orientation:               Слева направо
+
+PublishToWeb:              1                           ReadOnlyWhenDiscon         False
+RecordCount:               0                           ThemeFontIndex:            1
+TotalsRow:                 False                       Updatable:                 True
+
+
+
+Столбцы
+
+         Имя                                                     Тип                        Размер
+
+         КодФактАдреса                                           Длинное целое                            4
+
+                  AggregateType:             -1
+                  AllowZeroLength:           False
+
+                  AppendOnly:                False
+                  Attributes:                фиксированной ширины; автоприращение
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  GUID:                      {guid {4ABE8E5C-4002-4CB5-BA5E-B1BE16CE3FD1}}
+                  OrdinalPosition:           0
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               КодФактАдреса
+
+                  SourceTable:               Фактический_Адрес_Доставки
+                  TextAlign:                 Общее
+
+
+         КодКлиента                                              Текстовый                              255
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Фактический_Адрес_Доставки                                                             Страница: 65
+
+
+
+                  GUID:                      {guid {CA5A8843-479C-4508-BCDC-C29174277355}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           1
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               КодКлиента
+                  SourceTable:               Фактический_Адрес_Доставки
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Регион                                                  Текстовый                               50
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {3440229F-7680-4151-97BD-287C698019BB}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           2
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Регион
+                  SourceTable:               Фактический_Адрес_Доставки
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Город                                                   Текстовый                               20
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {DAB089F2-C03C-4283-A1A3-2A16DF4B577F}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Фактический_Адрес_Доставки                                                             Страница: 66
+
+
+                  OrdinalPosition:           3
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Город
+                  SourceTable:               Фактический_Адрес_Доставки
+
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Улица                                                   Текстовый                               50
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {96724B68-592E-4871-B48F-DA8B65CAF3E9}}
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  OrdinalPosition:           4
+                  Required:                  True
+
+                  ResultType:                0
+                  SourceField:               Улица
+
+                  SourceTable:               Фактический_Адрес_Доставки
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+         Дом                                                     Текстовый                                4
+
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {C2360918-DB8A-4E21-9351-8A296D100ADC}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           5
+
+                  Required:                  True
+                  ResultType:                0
+
+                  SourceField:               Дом
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Фактический_Адрес_Доставки                                                             Страница: 67
+
+
+                  SourceTable:               Фактический_Адрес_Доставки
+                  TextAlign:                 Общее
+                  UnicodeCompression:        True
+
+
+         Корпус/строение                                         Текстовый                                5
+
+                  AggregateType:             -1
+                  AllowZeroLength:           True
+
+                  AppendOnly:                False
+                  Attributes:                переменной длины
+
+                  CollatingOrder:            Общий
+                  ColumnHidden:              False
+
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+                  CurrencyLCID:              0
+
+                  DataUpdatable:             False
+                  DisplayControl:            Поле
+
+                  GUID:                      {guid {01027084-534B-4497-B6B0-B5985B24C36C}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           6
+
+                  Required:                  False
+                  ResultType:                0
+                  SourceField:               Корпус/строение
+
+                  SourceTable:               Фактический_Адрес_Доставки
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+         Индекс                                                  Текстовый                                7
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  GUID:                      {guid {F9ECCCFC-F173-4387-9E69-18E56E910ABA}}
+
+                  IMEMode:                   0
+                  IMESentenceMode:           3
+
+                  InputMask:                 9999999
+                  OrdinalPosition:           7
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Индекс
+
+                  SourceTable:               Фактический_Адрес_Доставки
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Фактический_Адрес_Доставки                                                             Страница: 68
+
+
+         Телефон                                                 Текстовый                               14
+                  AggregateType:             -1
+
+                  AllowZeroLength:           True
+                  AppendOnly:                False
+
+                  Attributes:                переменной длины
+                  CollatingOrder:            Общий
+
+                  ColumnHidden:              False
+                  ColumnOrder:               По умолчанию
+                  ColumnWidth:               По умолчанию
+
+                  CurrencyLCID:              0
+                  DataUpdatable:             False
+
+                  DisplayControl:            Поле
+                  Format:                    "(999) "0000000
+
+                  GUID:                      {guid {B2B6BAB0-7423-40C8-B8DF-3675EC75188B}}
+                  IMEMode:                   0
+
+                  IMESentenceMode:           3
+                  OrdinalPosition:           8
+                  Required:                  False
+
+                  ResultType:                0
+                  SourceField:               Телефон
+
+                  SourceTable:               Фактический_Адрес_Доставки
+                  TextAlign:                 Общее
+
+                  UnicodeCompression:        True
+
+
+
+
+
+
+Схема данных
+
+
+
+
+        КлиентыФактический_Адрес_Доставки
+
+                             Клиенты                       Фактический_Адрес
+
+                    КодКлиента                1       n  КодКлиента
+
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Фактический_Адрес_Доставки                                                             Страница: 69
+
+
+
+        Фактический_Адрес_ДоставкиПодробности_Заказа
+
+                        Фактический_Адрес                 Подробности_Заказа
+
+
+                    КодФактАдреса             1       n  КодФактическогоАд
+
+
+                 Attributes:                 Обязательность; Каскадные обновления; Каскадные
+                                             удаления
+                 RelationshipType:           один-ко-многим
+
+
+
+
+
+Индексы таблицы
+
+         Им                                       Число полей
+
+         PrimaryKey                               1
+                  Clustered:                 False
+
+                  DistinctCount:             0
+                  Foreign:                   False
+
+                  IgnoreNulls:               False
+                  Name:                      PrimaryKey
+
+                  Primary:                   True
+                  Required:                  True
+
+                  Unique:                    True
+                   Поля:
+
+                   КодФактАдреса              о возрастанию
+
+
+
+
+
+         КлиентыФактический_Адрес_До              1
+
+                  Clustered:                 False
+                  DistinctCount:             0
+
+                  Foreign:                   True
+                  IgnoreNulls:               False
+
+                  Name:                      КлиентыФактический_Адрес_Доставки
+                  Primary:                   False
+
+                  Required:                  False
+                  Unique:                    False
+
+                   Поля:
+                   КодКлиента                 о возрастанию
+
+
+
+
+
+
+
+
+
+Разрешения пользователей
+
+         admin                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+ Z:\2.23-09.02Б\Гудкова\бд\лаба6.accdb                                                       11 марта 2025 г.
+ Таблица: Фактический_Адрес_Доставки                                                             Страница: 70
+
+
+                                    Удаление данных
+
+
+
+Разрешения групп
+
+         Admins                     Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
+
+         Users                      Удаление; Чтение разрешений; Установка разрешений;
+                                    Смена владельца, Чтение описания; Запись описания;
+                                    Чтение данных; Вставка данных; Обновление данных;
